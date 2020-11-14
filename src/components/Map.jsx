@@ -13,7 +13,7 @@ function onClick(e, map) {
             if (data !== null) {
                 L.popup()
                     .setLatLng(e.latlng)
-                    .setContent(`<h1>${data.name}</h1><h2>${data.main.temp}&degC</h2>`)
+                    .setContent(`<h1>${data.name}</h1><img src="https://openweathermap.org/img/wn/${data.weather[0].icon}.png" alt="weather-icon"/><h2>${data.main.temp}&degC</h2>`)
                     .openOn(map);
             }
         });
