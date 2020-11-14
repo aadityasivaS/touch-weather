@@ -7,7 +7,7 @@ import * as ELG from 'esri-leaflet-geocoder';
 import 'leaflet.locatecontrol';
 import 'leaflet-defaulticon-compatibility';
 function onClick(e, map) {
-    fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${e.latlng.lat}&lon=${e.latlng.lng}&appid=${process.env.REACT_APP_API_KEY}&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${e.latlng.lat}&lon=${e.latlng.lng}&appid=${process.env.REACT_APP_API_KEY}&units=metric`)
         .then(response => response.json())
         .then(data => {
             if (data !== null) {
