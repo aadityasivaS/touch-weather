@@ -37,7 +37,7 @@ class Map extends React.Component {
             }
         });
         this.marker = this.touchPos === null ? null : this.touchPos;
-        L.control.locate({ flyTo: true, cacheLocation: true, strings: {}, position: 'bottomleft', showPopup: false }).addTo(this.map);
+        L.control.locate({ flyTo: true, cacheLocation: true, strings: {}, showPopup: false }).addTo(this.map);
 
         this.map.on('click', (e) => {
             onClick(e, this.map);

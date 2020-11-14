@@ -1,24 +1,24 @@
 body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 #map {
-    height: 91.8vh;
+  height: 90vh;
 }
 .logo {
-    width: 45px;
-    margin-right: 10px;
+  width: 45px;
+  margin-right: 10px;
 }
 .copyright {
-    font-family: 'Comfortaa';
+  font-family: "Comfortaa";
 }
 .copyright-text {
-    color: white;
-    text-decoration: none;
-    background: transparent;
-    transition: background 0.2s ease-in-out;
+  color: white;
+  text-decoration: none;
+  background: transparent;
+  transition: background 0.2s ease-in-out;
 }
 .copyright-text:hover {
-    background: #1c2b2d;
+  background: #1c2b2d;
 }
