@@ -1,9 +1,9 @@
 import React from 'react';
 import AppBar from './AppBar';
-import FloatingActionButton from './FloatingActionButton';
+import Map from './Map';
 export default function App() {
     return <div>
         <AppBar />
-        <FloatingActionButton />
+        <Map />
     </div>
 }
