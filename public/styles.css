@@ -7,6 +7,18 @@ body {
     height: 91.8vh;
 }
 .logo {
-    width: 2%;
+    width: 45px;
     margin-right: 10px;
+}
+.copyright {
+    font-family: 'Comfortaa';
+}
+.copyright-text {
+    color: white;
+    text-decoration: none;
+    background: transparent;
+    transition: background 0.2s ease-in-out;
+}
+.copyright-text:hover {
+    background: #1c2b2d;
 }

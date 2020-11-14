@@ -27,6 +27,7 @@ export default function ButtonAppBar() {
           <Typography variant="h6" className={classes.title}>
             Touch Weather
           </Typography>
+          <p className="copyright">© {new Date().getFullYear()} <a href="https://aadityasiva.tk" className="copyright-text" target="_blank" rel="noreferrer">Aadityasiva</a></p>
         </Toolbar>
       </AppBar>
     </div>

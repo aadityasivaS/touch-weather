@@ -7,10 +7,18 @@ import * as ELG from 'esri-leaflet-geocoder';
 import 'leaflet.locatecontrol';
 import 'leaflet-defaulticon-compatibility';
 function onClick(e, map) {
-    L.popup()
-        .setLatLng(e.latlng)
-        .setContent("<h1>You clicked the map at</h1> " + e.latlng.toString())
-        .openOn(map);
+    fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${e.latlng.lat}&lon=${e.latlng.lng}&appid=${process.env.REACT_APP_API_KEY}&units=metric`)
+        .then(response => response.json())
+        .then(data => {
+            if (data !== null) {
+                L.popup()
+                    .setLatLng(e.latlng)
+                    .setContent(`<h1>${data.name}</h1><h2>${data.main.temp}&degC</h2>`)
+                    .openOn(map);
+            }
+        });
+
+
 }
 class Map extends React.Component {
     componentDidMount() {
