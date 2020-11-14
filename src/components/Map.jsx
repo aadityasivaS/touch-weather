@@ -4,8 +4,14 @@ import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 import * as L from 'leaflet';
 import 'esri-leaflet';
 import * as ELG from 'esri-leaflet-geocoder';
-import * as locate from 'leaflet.locatecontrol';
+import 'leaflet.locatecontrol';
 import 'leaflet-defaulticon-compatibility';
+function onClick(e, map) {
+    L.popup()
+        .setLatLng(e.latlng)
+        .setContent("<h1>You clicked the map at</h1> " + e.latlng.toString())
+        .openOn(map);
+}
 class Map extends React.Component {
     componentDidMount() {
         this.touchPos = null;
@@ -22,8 +28,12 @@ class Map extends React.Component {
                 results.addLayer(L.marker(data.results[i].latlng));
             }
         });
-        L.control.locate().addTo(this.map);
         this.marker = this.touchPos === null ? null : this.touchPos;
+        L.control.locate({ flyTo: true, cacheLocation: true, strings: {}, position: 'bottomleft', showPopup: false }).addTo(this.map);
+
+        this.map.on('click', (e) => {
+            onClick(e, this.map);
+        });
     }
     componentDidUpdate({ markerPosition }) {
         if (this.touchPos !== markerPosition) {
@@ -31,7 +41,6 @@ class Map extends React.Component {
         }
     }
     render() {
-
         return <div id="map"></div>
     }
 }

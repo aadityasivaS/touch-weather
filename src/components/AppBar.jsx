@@ -23,6 +23,7 @@ export default function ButtonAppBar() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
+          <img className={"logo"} src="pin.png" alt="logo"/>
           <Typography variant="h6" className={classes.title}>
             Touch Weather
           </Typography>
